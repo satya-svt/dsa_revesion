@@ -1,18 +1,24 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int digitCount(int n) {
-    int Count = 0;
+bool palindrome(int n) {
+    int revnum = 0;
+    int original = n;
     while (n > 0) {
-        Count++;
+        int lastDigit = n % 10;
         n = n / 10;
+        revnum = (revnum*10) + lastDigit;
     }
-    return Count;
+    return revnum == original;
 }
 
 int main() {
     int n;
     cin >> n;
-    cout << palindrome(n);
+    if (palindrome(n)) {
+        cout << "true";
+    } else {
+        cout << "false";
+    }
     return 0;
 }
