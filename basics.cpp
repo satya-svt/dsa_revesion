@@ -1,25 +1,26 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-void printDivs(int n) {
-    vector<int> div;
+bool prime(int n) {
+    int count = 0;
     for (int i = 0; i * i <= n; i++) {
         if (n % i == 0) {
-            div.emplace_back(i);
+            count++;
         if (n/i != i) {
-            div.emplace_back((n / i));
+            count++;
             }
         }
     }
-    sort(div.begin(), div.end());
-    for (auto it : div) {
-        cout << it << " ";
-    }
+    return count == 2;
 }
 
 int main() {
     int n;
     cin >> n;
-    printDivs(n);
+    if (prime(n)) {
+        cout << "true";
+    } else {
+        cout << "false";
+    }
     return 0;
 }

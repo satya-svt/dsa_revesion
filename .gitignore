@@ -1,0 +1,14 @@
+__pycache__
+.vscode
+a.out
+basics
+basics.class
+basics.java
+basics.py
+basics$ReactionTester.class
+basics$ReactionTester$1.class
+basics$ReactionTester$State.class
+index.css
+index.html
+script.js
+.DS_Store
