@@ -1,25 +1,25 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-bool armstrong(int n) {
-    int ArmSum = 0;
-    int original = n;
-    int power = to_string(n).length();
-    while (n > 0) {
-        int lastDigit = (n % 10);
-        ArmSum += round(pow(lastDigit, power));
-        n = n / 10;
+void printDivs(int n) {
+    vector<int> div;
+    for (int i = 0; i * i <= n; i++) {
+        if (n % i == 0) {
+            div.emplace_back(i);
+        if (n/i != i) {
+            div.emplace_back((n / i));
+            }
+        }
     }
-    return ArmSum == original;
+    sort(div.begin(), div.end());
+    for (auto it : div) {
+        cout << it << " ";
+    }
 }
 
 int main() {
     int n;
     cin >> n;
-    if (armstrong(n)) {
-        cout << "true";
-    } else {
-        cout << "false";
-    }
+    printDivs(n);
     return 0;
 }
