@@ -1,21 +1,22 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-bool palindrome(int n) {
-    int revnum = 0;
+bool armstrong(int n) {
+    int ArmSum = 0;
     int original = n;
+    int power = to_string(n).length();
     while (n > 0) {
-        int lastDigit = n % 10;
+        int lastDigit = (n % 10);
+        ArmSum += round(pow(lastDigit, power));
         n = n / 10;
-        revnum = (revnum*10) + lastDigit;
     }
-    return revnum == original;
+    return ArmSum == original;
 }
 
 int main() {
     int n;
     cin >> n;
-    if (palindrome(n)) {
+    if (armstrong(n)) {
         cout << "true";
     } else {
         cout << "false";
