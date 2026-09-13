@@ -1,26 +1,18 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-bool prime(int n) {
-    int count = 0;
-    for (int i = 1; i * i <= n; i++) {
-        if (n % i == 0) {
-            count++;
-        if (n/i != i) {
-            count++;
-            }
-        }
+int gcd(int n, int m) {
+    while (n > 0 && m > 0) {
+        if (n > m) n = n % m;
+        else m = m % n;
     }
-    return count == 2;
+    if (n == 0) return m;
+    return n;
 }
 
 int main() {
-    int n;
+    int n, m;
     cin >> n;
-    if (prime(n)) {
-        cout << "true";
-    } else {
-        cout << "false";
-    }
-    return 0;
+    cin >> m;
+    cout << gcd(n, m);
 }
