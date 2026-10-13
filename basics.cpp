@@ -3,12 +3,10 @@ using namespace std;
 
 class arrayops {
     public:
-        int odd(vector<int>& ves) {
+        int sum(vector<int>& ves) {
             int count = 0;
             for (auto it : ves) {
-                if (it % 2 !=  0) {
-                    count++;
-                }
+                    count += it;
             }
             return count;
         }
@@ -23,7 +21,7 @@ int main() {
         cin >> temp;
         ves.push_back(temp);
     }
-    arrayops odding;
-    cout << odding.odd(ves);
+    arrayops summing;
+    cout << summing.sum(ves);
     return 0;
 }
