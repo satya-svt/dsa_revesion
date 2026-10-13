@@ -1,18 +1,29 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int gcd(int n, int m) {
-    while (n > 0 && m > 0) {
-        if (n > m) n = n % m;
-        else m = m % n;
-    }
-    if (n == 0) return m;
-    return n;
-}
+class arrayops {
+    public:
+        int odd(vector<int>& ves) {
+            int count = 0;
+            for (auto it : ves) {
+                if (it % 2 !=  0) {
+                    count++;
+                }
+            }
+            return count;
+        }
+};
 
 int main() {
-    int n, m;
-    cin >> n;
-    cin >> m;
-    cout << gcd(n, m);
+    int N;
+    int temp;
+    vector<int> ves;
+    cin >> N;
+    for (int i = 0; i < N; i++) {
+        cin >> temp;
+        ves.push_back(temp);
+    }
+    arrayops odding;
+    cout << odding.odd(ves);
+    return 0;
 }
