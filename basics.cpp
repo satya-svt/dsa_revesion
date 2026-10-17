@@ -10,6 +10,21 @@ class arrayops {
             }
             return count;
         }
+        int odding(vector<int>& ves) {
+            int count = 0;
+            for (int it : ves) {
+                if (it % 2 != 0) {
+                    count++;
+                }
+            }
+                return count;
+        }
+        bool sort_check(vector<int>& ves) {
+            for (auto it : ves) {
+                if (ves[it] > ves[it + 1]) return false;
+            }
+            return true;
+        }
 };
 
 int main() {
@@ -21,7 +36,7 @@ int main() {
         cin >> temp;
         ves.push_back(temp);
     }
-    arrayops summing;
-    cout << summing.sum(ves);
+    arrayops sortCheck;
+    sortCheck.sort_check(ves) == 0 ? cout << "True" : cout << "False";
     return 0;
 }
